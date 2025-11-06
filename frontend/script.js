@@ -12,7 +12,7 @@ const FAQ = [
   { q: "sports complex", a: "The sports complex is open from 8:00 AM to 8:00 PM daily. Membership required for some facilities." },
   { q: "hostel office", a: "Hostel office is located on the Ground Floor of every hostel. Office hours: 9:00 AM - 5:00 PM." },
   { q: "canteen timing", a: "Canteen is open for breakfast (7:30am–9:00am), lunch (12:00pm–2:00pm), evening tea (5:00pm–6:00pm), and dinner (7:30pm–9:00pm)." },
-  { q: "about yourself", a: "Ohh, good question! I’m the Campus Chatbot of Mewar University, created by Musharaf..." },
+  { q: "about yourself,nusharaf,tabish", a: "Ohh, good question! I’m the Campus Chatbot of Mewar University, created by Musharaf and team..." },
   { q: "hello,hii,hi,hey,buddy", a: "👋 Hello! I’m <b>CampusMate</b> — your smart assistant from <b>Mewar University</b>.<br>Ask me anything about campus life — library hours, exams, hostels, or events!"},
   { 
   q: "mewar university", 
