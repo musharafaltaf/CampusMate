@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CampusMate — Campus Chat Assistant</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="page">
+    
+
+    <section class="card" aria-labelledby="app-title">
+      
+      <aside class="panel">
+        <div class="brand">
+          <div class="logo">CM</div>
+          <div>
+            <h1 id="app-title">CampusMate</h1>
+            <p class="muted">Professional campus assistant — quick answers for students.</p>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">Quick Questions</h2>
+          <div id="quick-list" class="quick-list" aria-hidden="false">
+            <!-- Buttons injected by script -->
+          </div>
+        </div>
+
+        <!-- <div class="section small">
+          <h3 class="muted">Tech & Tips</h3>
+          <ul>
+            <li>Pure HTML/CSS/JS — no backend required</li>
+            <li>Local FAQ fallback for offline demo</li>
+            <li>Copy & customize the FAQ in <code>script.js</code></li>
+          </ul>
+        </div> -->
+      </aside>
+
+      <!-- Chat area -->
+      <section class="chat-area" role="region" aria-label="Chat area">
+        <header class="chat-header">
+  <div class="agent">
+    <div class="agent-logo">CM</div>
+    <div>
+      <div class="agent-name">CampusMate</div>
+      <div class="agent-sub">Campus Chat Assistant</div>
+    </div>
+  </div>
+  <div class="status" id="status">Online</div>
+
+  <!-- Menu button for mobile -->
+  <button id="menu-btn" class="menu-btn" aria-label="Toggle menu">☰</button>
+</header>
+
+
+        <div id="messages" class="messages" role="log" aria-live="polite"></div>
+
+        <form id="chat-form" class="composer" autocomplete="off">
+          <label for="input" class="sr-only">Ask a question</label>
+          <input id="input" name="input" type="text" placeholder="Ask about library hours, exams, or events..." />
+          <button type="submit" class="btn">Send</button>
+        </form>
+      </section>
+    </section>
+  </main>
+  <div class="overlay" id="overlay"></div>
+
+      <!-- 👇 this goes right before closing body tag -->
+    <script src="script.js" defer></script>
+  </body>
+</html>
+
+</body>
+</html>
