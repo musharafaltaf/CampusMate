@@ -1,0 +1,1 @@
+mewar university AI assistant
