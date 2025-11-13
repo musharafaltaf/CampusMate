@@ -12,7 +12,7 @@ const FAQ = [
   { q: "sports complex", a: "The sports complex is open from 8:00 AM to 8:00 PM daily. Membership required for some facilities." },
   { q: "hostel office", a: "Hostel office is located on the Ground Floor of every hostel. Office hours: 9:00 AM - 5:00 PM." },
   { q: "canteen timing", a: "Canteen is open for breakfast (7:30am–9:00am), lunch (12:00pm–2:00pm), evening tea (5:00pm–6:00pm), and dinner (7:30pm–9:00pm)." },
-  { q: "about yourself,nusharaf,tabish", a: "Ohh, good question! I’m the Campus Chatbot of Mewar University, created by Musharaf and team..." },
+  { q: "about yourself,musharaf", a: "Ohh, good question! I’m the CampusMate of Mewar University, created by <b>Musharaf And team...!</b>" },
   { q: "hello,hii,hi,hey,buddy", a: "👋 Hello! I’m <b>CampusMate</b> — your smart assistant from <b>Mewar University</b>.<br>Ask me anything about campus life — library hours, exams, hostels, or events!"},
   { 
   q: "mewar university", 
@@ -24,8 +24,10 @@ const FAQ = [
 },
 {
   q: "upcoming events",
-  a: "🎓 <b>Upcoming Events at Mewar University:</b><br><br>📅 <b>TechFest 2025:</b> Scheduled for 7 November — includes hackathon, coding challenge, and robotics exhibition.<br>🎭 <b>some good events:</b> From  December — featuring dance, drama, and music competitions.<br>⚽ <b>Sports Meet 2025:</b> 15–18 January — inter-department tournaments in cricket, football, and athletics.<br><br>Stay tuned to the official noticeboard and <b>www.mewaruniversity.org</b> for updates and registrations!"
-}
+  a: "🎓 <b>Upcoming Events at Mewar University:</b><br><br>📅 <b>TechFest 2025:</b> Scheduled for 6-7 December — includes hackathon, coding challenge, and robotics exhibition.<br>🎭 <b>some good events:</b> From  December — featuring dance, drama, and music competitions.<br>⚽ <b>Sports Meet 2025:</b> 15–18 January — inter-department tournaments in cricket, football, and athletics.<br><br>Stay tuned to the official noticeboard and <b>www.mewaruniversity.org</b> for updates and registrations!"
+},
+{ q: "chairman of mewar", a: "Ohh!.. You Are Asking About Chairman of Mewar University. So The Chairman of mewar university is <b>Dr.Ashok Gadiya</b>"},
+{ q: "qq, wwz, zwx, xr, vyb, u , nim, q , a, b, c, d, e, f, g, ff, v, wat, wht", a: "Ohh Ohh!...can you explain more about it"}
 
 
 
@@ -133,13 +135,49 @@ if (quickList) {
 
 
   // === Messaging Functions ===
-  function addMessage(text, sender = "bot") {
-    const msg = document.createElement("div");
-    msg.classList.add("msg", sender);
-    msg.innerHTML = text;
-    messages.appendChild(msg);
-    messages.scrollTo({ top: messages.scrollHeight, behavior: "smooth" });
-  }
+  // Robust addMessage that always scrolls the new message into view
+function addMessage(text, sender = "bot") {
+  const msg = document.createElement("div");
+  msg.classList.add("msg", sender);
+  msg.innerHTML = text;
+
+  // append message
+  messages.appendChild(msg);
+
+  // give browser a tick to render, then scroll
+  setTimeout(() => {
+    messages.scrollTo({
+      top: messages.scrollHeight,
+      behavior: "smooth"
+    });
+  }, 50);
+}
+
+function simulateTyping(callback, ms = 1000) {
+  const typingDiv = document.createElement("div");
+  typingDiv.classList.add("typing");
+  typingDiv.innerHTML = `
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+  `;
+  messages.appendChild(typingDiv);
+
+  // scroll to typing indicator
+  setTimeout(() => {
+    messages.scrollTo({
+      top: messages.scrollHeight,
+      behavior: "smooth"
+    });
+  }, 50);
+
+  // remove typing dots then show reply
+  setTimeout(() => {
+    typingDiv.remove();
+    callback();
+  }, ms);
+}
+
 
   function simulateTyping(callback) {
     const typingDiv = document.createElement("div");

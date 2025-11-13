@@ -37,27 +37,30 @@
 
       <!-- Chat area -->
       <section class="chat-area" role="region" aria-label="Chat area">
-        <header class="chat-header">
-  <div class="agent">
-    <div class="agent-logo">CM</div>
-    <div>
-      <div class="agent-name">CampusMate</div>
-      <div class="agent-sub">Campus Chat Assistant</div>
+  <header class="chat-header">
+    <div class="agent">
+      <div class="agent-logo">CM</div>
+      <div>
+        <div class="agent-name">CampusMate</div>
+        <div class="agent-sub">Campus Chat Assistant</div>
+      </div>
     </div>
-  </div>
-  <div class="status" id="status">Online</div>
+    <div class="status" id="status">Online</div>
+    <button id="menu-btn" class="menu-btn" aria-label="Toggle menu">☰</button>
+  </header>
 
-  <!-- Menu button for mobile -->
-  <button id="menu-btn" class="menu-btn" aria-label="Toggle menu">☰</button>
-</header>
+  <div id="messages" class="messages" role="log" aria-live="polite"></div>
+
+  <!-- ✅ Floating ChatGPT-style input -->
+  <form id="chat-form" class="floating-composer" autocomplete="off">
+    <input id="input" name="input" type="text" placeholder="Message CampusMate..." />
+    <button type="submit" class="send-btn">➤</button>
+  </form>
+</section>
 
 
-        <div id="messages" class="messages" role="log" aria-live="polite"></div>
+</section>
 
-        <form id="chat-form" class="composer" autocomplete="off">
-          <label for="input" class="sr-only">Ask a question</label>
-          <input id="input" name="input" type="text" placeholder="Ask about library hours, exams, or events..." />
-          <button type="submit" class="btn">Send</button>
         </form>
       </section>
     </section>
